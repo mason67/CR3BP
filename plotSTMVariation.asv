@@ -1,0 +1,28 @@
+function [outputArg1,outputArg2] = plotSTMVariation(t,PHI)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%PLOTSTMVARIATION Summary of this function goes here
+%   Inputs:
+%       t -     [fl]  [mx1] Time vector
+%       PHI -   [fl]  [mx36] ROW MAJOR form of the 6x6 STM Matrix
+%       mu -    [fl]  Mass ratio of the system 
+%   Outputs (via varargout):
+%       C - [mx1] vector of Jacobi constants
+%   Author:
+%       Tyler Mason, tyma4153@colorado.edu
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    [nDataPts,n] = shape(PHI);
+    for i = 1:nDataPts
+        % Reconstruct STM from row major to 6x6
+        STM = [PHI(i,1:6);
+               PHI(i,7:12);
+               PHI(i,13:18);
+               PHI(i,19:24);
+               PHI(i,25:30);
+               PHI(i,31:36)];
+        
+    end
+
+
+end
+
